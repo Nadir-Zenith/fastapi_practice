@@ -21,7 +21,7 @@ async def bands(genre: GenreURLChoices | None = None, has_albums:bool = False) -
     band_list = [BandWithID(**b) for b in BANDS]
     if genre:
         band_list = [
-            b for b in band_list if b.genre.lower() == genre.value
+            b for b in band_list if b.genre.value.lower() == genre.value
         ]
     if has_albums:
         band_list = [b for b in band_list if b.albums]
